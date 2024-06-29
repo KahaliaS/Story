@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3002;
 const URI = process.env.DB_CONNECTION_STRING;
-// const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/user");
 
 //add controller
 
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
     .status(200)
     .sendFile(path.resolve(__dirname, "../public/index.html"));
 });
-// app.use("/api/user", userRoutes);
+app.use("/api/user", userRoutes);
 
 //404 handler
 app.use("*", (req, res) => {

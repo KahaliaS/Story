@@ -4,7 +4,7 @@ import GameNavbar from "./GameNavbar.jsx";
 const Map = () => {
   return (
     <div>
-      <GameNavbar></GameNavbar>
+      <GameNavbar />
       "Map"
     </div>
   );

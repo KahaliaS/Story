@@ -5,11 +5,11 @@ import Navbar from "react-bootstrap/Navbar";
 
 const GameNavbar = () => {
   return (
-    //contains links (navbar?) to the other components.
-    //navbar will contain inventory, map, notebook, playerstats (the players icon will lead them to the playerstats page), and settings
-    <>
-      <Navbar>
-        <Nav>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="/">Story Coders</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
           <LinkContainer to="/inventory">
             <Nav.Link>Inventory</Nav.Link>
           </LinkContainer>
@@ -17,14 +17,17 @@ const GameNavbar = () => {
             <Nav.Link>Map</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/notebook">
-            <Nav.Link>Playground</Nav.Link>
+            <Nav.Link>Notebook</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/player-stats">
+            <Nav.Link>Player Stats</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/settings">
             <Nav.Link>Settings</Nav.Link>
           </LinkContainer>
         </Nav>
-      </Navbar>
-    </>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 

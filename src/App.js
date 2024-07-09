@@ -1,5 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./components/Home.jsx";
 import Inventory from "./components/Inventory.jsx";
 import Notebook from "./components/Notebook.jsx";
 import PlayerStats from "./components/PlayerStats.jsx";
@@ -14,31 +16,15 @@ function App() {
     <div>
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/notebook" element={<Notebook />} />
-          <Route path="/playerstats" element={<PlayerStats />} />
+          <Route path="/player-stats" element={<PlayerStats />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/map" element={<Map />} />
-          <Route path="/openingpage" element={<OpeningPage />} />
+          <Route path="/opening-page" element={<OpeningPage />} />
         </Routes>
       </Router>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
     </div>
   );
 }

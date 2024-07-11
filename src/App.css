@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.parent-container {
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+}
+
+.flex-column {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.interactive-container {
+  grid-column-start: 3;
+  grid-column-end: 10;
+  grid-row-start: 2;
+  grid-row-end: 10;
+  border: solid;
+  /* grid-column-end: 2; */
+}

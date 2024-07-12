@@ -10,8 +10,7 @@ const PORT = process.env.PORT || 3002;
 const URI = process.env.DB_CONNECTION_STRING;
 const userRoutes = require("./routes/user");
 
-//add controller
-
+// Connect to MongoDB
 mongoose
   .connect(URI)
   .then(() => console.log("Connected to DB."))
@@ -20,27 +19,28 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
+// Define API routes before the static middleware
+app.use("/api/user", userRoutes);
+
+// Serve static files from the React app
 app.use(express.static(path.join(__dirname, "../build")));
 
+// 404 handler for API routes
+app.use("/api/*", (req, res) => {
+  res.status(404).send("API Not Found");
+});
+
+// Serve the React app for any unknown routes
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../build", "index.html"));
 });
 
-// app.get("/*", (req, res) => {
-//   //   res.send("Welcome to my home page");
-//   return res
-//     .status(200)
-//     .sendFile(path.resolve(__dirname, "../public/index.html"));
-// });
-
-app.use("/api/user", userRoutes);
-
-//404 handler
+// Global 404 handler for any other routes
 app.use("*", (req, res) => {
   res.status(404).send("Not Found");
 });
 
-//global error handler
+// Global error handler
 app.use((err, req, res, next) => {
   const defaultErr = {
     log: "Express error handler caught unknown middleware error",

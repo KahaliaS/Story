@@ -20,23 +20,21 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/notebook" element={<Notebook />} />
-          <Route path="/player-stats" element={<PlayerStats />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/opening-page" element={<OpeningPage />} />
-          <Route path="/level-one" element={<LevelOne />} />
-          <Route path="/level-two" element={<LevelTwo />} />
-          <Route path="/level-three" element={<LevelThree />} />
-          <Route path="/level-four" element={<LevelFour />} />
-          <Route path="/level-five" element={<LevelFive />} />
-          <Route path="/level-six" element={<LevelSix />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/notebook" element={<Notebook />} />
+        <Route path="/player-stats" element={<PlayerStats />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/opening-page" element={<OpeningPage />} />
+        <Route path="/level-one" element={<LevelOne />} />
+        <Route path="/level-two" element={<LevelTwo />} />
+        <Route path="/level-three" element={<LevelThree />} />
+        <Route path="/level-four" element={<LevelFour />} />
+        <Route path="/level-five" element={<LevelFive />} />
+        <Route path="/level-six" element={<LevelSix />} />
+      </Routes>
     </div>
   );
 }

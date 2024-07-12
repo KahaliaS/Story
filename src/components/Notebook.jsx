@@ -8,7 +8,9 @@ const Notebook = () => {
         <div className="flex-column">
           <GameNavbar />
         </div>
-        <div className="interactive-container">map</div>
+        <div className="interactive-container" data-testid="notebook">
+          map
+        </div>
       </div>
     </div>
   );

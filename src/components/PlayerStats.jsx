@@ -8,7 +8,9 @@ const PlayerStats = () => {
         <div className="flex-column">
           <GameNavbar />
         </div>
-        <div className="interactive-container">map</div>
+        <div className="interactive-container" data-testid="player-stats">
+          map
+        </div>
       </div>
     </div>
   );
